@@ -28,7 +28,7 @@
 - 4대의 userDB
 - 1대의 commonDB
 
-![그림 1 애플리케이션의 데이터베이스 구성](그림1.png)
+![그림 1 애플리케이션의 데이터베이스 구성](./document/그림1.png)
 
 > 그림 1 애플리케이션의 데이터베이스 구성
 
@@ -89,7 +89,7 @@ public class FooService {
 
 이 과정을 시퀀스 다이어그램으로 살펴보면 다음과 같다.
 
-![그림 2 시퀀스 다이어그램](그림2.png)
+![그림 2 시퀀스 다이어그램](./document/그림2.png)
 
 > 그림 2 시퀀스 다이어그램
 
@@ -125,7 +125,7 @@ public class FooService {
 아래 그림은 `TransactionSynchronizationManager`에서 트랜잭션 동기화 처리를위해  `ThreadLocal`에 커넥션객체가 담겨있는 상태와
 `SpringManagedTransaction` 에서 `openConnection()` 을 호출할때 어떤 커넥션을 가져오게 되는지를 대략적으로 표현한 그림이다.
 
-![그림 3 커넥션 추출 도식화](그림3.png)
+![그림 3 커넥션 추출 도식화](./document/그림3.png)
 
 > 그림 3 커넥션 추출 도식화
 
@@ -165,11 +165,11 @@ XA는 분산 트랜잭션 처리를 위해 X/Open이 제정한 표준 스펙이�
 
 2단계 커밋 프로토콜 수행을 통해, 분산된 데이터베이스에서 발생하는 각각의 트랜잭션을 원자적인 트랜잭션으로 구성할 수 있도록 한다. 자세한 내용은 [X/Open XA - 위키백과](https://ko.wikipedia.org/wiki/X/Open_XA)를 참고한다.
 
-![그림 4 2단계 커밋 프로토콜의 흐름](그림4.png)
+![그림 4 2단계 커밋 프로토콜의 흐름](./document/그림4.png)
 
 > 그림 4 2단계 커밋 프로토콜의 흐름(출처: [XA Transactions (2 Phase Commit): A Simple Guide - DZone Integration](https://dzone.com/articles/xa-transactions-2-phase-commit))
 
-![그림 5 분산 트랜잭션의 개념 모델](그림5.gif)
+![그림 5 분산 트랜잭션의 개념 모델](./document/그림5.gif)
 
 > 그림 5 분산 트랜잭션의 개념 모델(출처: [XA transactions using Spring | JavaWorld](https://www.javaworld.com/article/2077714/java-web-development/xa-transactions-using-spring.html))
 
@@ -195,7 +195,7 @@ MySQL DBMS와 JtaTransactionManager에 주입할 Atomikos를 사용한다고 가
 
 MySQL, Atomikos 조합이 아니더라도 프로젝트 환경에 따라서 구현체만 바꿔주면 동일하게 사용 가능하다.
 
-![그림 6 단일 데이터베이스 환경과 분산 데이터베이스 환경에서 트랜잭션을 처리하기 위한 구성 요소 차이](그림6.png)
+![그림 6 단일 데이터베이스 환경과 분산 데이터베이스 환경에서 트랜잭션을 처리하기 위한 구성 요소 차이](./document/그림6.png)
 
 > 그림 6 단일 데이터베이스 환경과 분산 데이터베이스 환경에서 트랜잭션을 처리하기 위한 구성 요소 차이
 
@@ -343,7 +343,7 @@ XA 처리 레이어에서는 `prepare()` 단계에서 각 트랜잭션 작업의
 다음 그림을 보면 분산 트랜잭션이 어떤 흐름으로 처리되는지 이해하는 데 도움이 될 것이다.
 실제 적용에 필요한 몇몇 클래스가 다르지만 인터페이스에 대한 구현체만 다를 뿐 기본 흐름은 동일하다.
 
-![그림 7 스프링 환경에서 JTA를 사용한 분산 트랜잭션 처리 흐름](그림7.png)
+![그림 7 스프링 환경에서 JTA를 사용한 분산 트랜잭션 처리 흐름](./document/그림7.png)
 
 > 그림 7 스프링 환경에서 JTA를 사용한 분산 트랜잭션 처리 흐름(출처: [XA transactions using Spring | JavaWorld](https://www.javaworld.com/article/2077714/java-web-development/xa-transactions-using-spring.html?page=3))
 
@@ -359,3 +359,8 @@ XA 처리 레이어에서는 `prepare()` 단계에서 각 트랜잭션 작업의
 특히, 스프링부트를 사용하는 프로젝트 구성에서는 의존성을 추가하고 단 몇 가지 설정 정보만 변경하면 기존의 비즈니스 로직은 전혀 건드릴 필요 없이 JTA를 이용하여 분산 트랜잭션을 처리할 수 있는 모든 요소를 갖출 수 있다는 것이 매력적이다.
 
 프로젝트 구축 시 최초에는 구성이 단출한 단일 데이터베이스만을 사용하지만 서비스의 규모가 커짐에 따라 데이터베이스를 샤딩을 통한 확장을 진행한다. 이 글에서는 분산 데이터베이스로 변경된 환경에서 요구되는 트랜잭션 처리에 적용할 수 있는 JTA에 대해서 알아보았다. 비슷한 환경의 프로젝트에서 고민하는 개발자분들께 조금이나마 도움이 되었으면 좋겠다.
+
+---
+
+> 질문, 이슈, report 등은
+`daemin.hwang@navercorp.com` 메일 주소로 보내주시면 감사하겠습니다.

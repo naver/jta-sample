@@ -19,13 +19,13 @@ public class DataSourceConfig {
     @Bean
     public DataSource routingDataSource() {
         AbstractRoutingDataSource routingDataSource = new RoutingDataSource();
-        routingDataSource.setDefaultTargetDataSource(createDataSource("jdbc:mysql://10.113.183.250:13306/se"));
+        routingDataSource.setDefaultTargetDataSource(createDataSource("jdbc:mysql://2.1.1.0:3306/commonDB"));
 
         Map<Object, Object> targetDataSources = new HashMap<>();
-        targetDataSources.put(0, createDataSource("jdbc:mysql://10.106.136.25:13306/se"));
-        targetDataSources.put(1, createDataSource("jdbc:mysql://10.106.137.23:13306/se"));
-        targetDataSources.put(2, createDataSource("jdbc:mysql://10.105.172.10:13306/se"));
-        targetDataSources.put(3, createDataSource("jdbc:mysql://10.105.168.27:13306/se"));
+        targetDataSources.put(0, createDataSource("jdbc:mysql://1.1.1.0:3306/userDB"));
+        targetDataSources.put(1, createDataSource("jdbc:mysql://1.1.1.1:3306/userDB"));
+        targetDataSources.put(2, createDataSource("jdbc:mysql://1.1.1.2:3306/userDB"));
+        targetDataSources.put(3, createDataSource("jdbc:mysql://1.1.1.3:3306/userDB"));
         routingDataSource.setTargetDataSources(targetDataSources);
 
         return routingDataSource;
