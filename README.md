@@ -1,5 +1,7 @@
 > helloworld에 기고된 '분산 데이터베이스 환경에서 RoutingDataSource 사용 시 JTA를 이용한 트랜잭션 처리' 글의 샘플 코드를 위한 저장소입니다.
 
+> 이 저장소의 모든 샘플코드는 [Apache License v2.0](LICENSE)으로 배포됩니다.
+
 > 질문, 이슈, report 등은 `daemin.hwang@navercorp.com` 메일 주소로 보내주시면 감사하겠습니다.
 
 
