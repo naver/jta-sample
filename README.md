@@ -37,6 +37,10 @@
 
 > 그림 1 애플리케이션의 데이터베이스 구성
 
+### 코드 구성
+`RoutingDataSource` 와 `AOP` 설정에 대한 Java Config 구성샘플은 [깃헙 저장소](https://github.com/naver/jta-sample) 에서 확인하길 바랍니다. 
+
+
 ### 비즈니스 로직 요구 사항
 
 - `FooService.class`에는 `bar(String userId)` 메서드가 있다.
